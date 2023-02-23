@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#E14D81" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Orbitron:wght@800&display=swap" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Orbitron:wght@800&display=swap" rel="stylesheet" /> 
       </Head>
       <Layout>
         <Component {...pageProps} />
