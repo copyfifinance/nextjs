@@ -1307,15 +1307,12 @@ button.Header_header__wallet__QmJI3 {
 }
 
 button.button.button__large {
-  --line-width: 2px;
-  --line-color-rgb: 50,150,255;
-  --bg-color-rgb: 5,5,5;
   margin-bottom: 10px;
-  border: 1px solid rgb(255 255 255 / 50%)!important;--color-white: rgb(250,250,250);
+  border: 1px solid rgb(255 255 255 / 50%)!important;
   position: relative;
   z-index: 1!important;
-  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px #3DB5F1;
-  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px #3DB5F1;
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px, 0px 0px 0.5em 0px #3DB5F1;
+  -moz-box-shadow: inset 0px 0px 0.5em 0px, 0px 0px 0.5em 0px #3DB5F1;
   box-shadow: inset 0px 0px 0.5em 0px #3db5f1, 0px 0px 0.5em 0px #3db5f1;
   border-radius: 5px!important;
   /* filter: brightness(1.5); */
@@ -1323,9 +1320,7 @@ button.button.button__large {
   background: rgb(255 255 255 / 10%)!important;
   align-items: center;
   justify-content: center;
-  padding: var(--line-width);
   font-family: sans-serif;
-  color: rgb(var(--line-color-rgb));
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
@@ -1346,17 +1341,14 @@ button.button.button__large::after {
 }
 button.button.button__large::before {
   position: absolute;
-  width: calc(100% + calc(4 * var(--line-width)));
   /*   height: 100%; */
   aspect-ratio: 1/1;
   opacity: 0.1;
-  background-image: conic-gradient(transparent, rgba(var(--line-color-rgb),0.15), rgba(var(--line-color-rgb),0.75), rgb(var(--line-color-rgb)));
   animation: rotate 2s linear infinite;
 }
 button.button.button__large::after {
   content: '';
   : 12px 24px;
-  width: max-content;
   /* background-color: white; */
   transition: 500ms;
   position: absolute;
@@ -1369,17 +1361,6 @@ button.button.button__large::after {
   width: calc(100% - 4px);
   z-index: 0;
   border-radius: 5px;
-}
-button.button.button__large:hover,
-button.button.button__large:hover::after {
-  background-color: rgb(var(--line-color-rgb));
-  color: var(--color-white);
-  border-radius: var(--line-width);
-  
-  box-shadow: 0 0 5px rgb(var(--line-color-rgb)),
-    0 0 20px rgb(var(--line-color-rgb)),
-    0 0 40px rgb(var(--line-color-rgb)),
-    0 0 80px rgb(var(--line-color-rgb));
 }
 
 @keyframes rotate {
