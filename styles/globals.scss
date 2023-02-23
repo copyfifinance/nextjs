@@ -1592,3 +1592,51 @@ button.button.button__large {
   overflow: hidden;
   transition: 500ms;
 }
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgb(0 0 0 / 5%);
+    z-index: 1;
+    bottom: 5px;
+    left: 5px;
+    border-radius: 20px;
+    pointer-events: none;
+    /* background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.06) 50%,rgba(237,237,237,0.03) 50.1%,rgba(255,255,255,0.03) 100%); */
+}
+
+main::after {
+    width: 70px;
+    height: 70px;
+    background: url(http://copyfi.finance/assets/images/CopyfiLogo.png);
+    display: block;
+    content: "";
+    background-size: contain;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 00px;
+    background: url(https://copyfi.finance/assets/images/HeroImg.png);
+    display: block;
+    position: absolute;
+    z-index: -1;
+    filter: blur(115px);
+    background-size: 5000px;
+    background-position: top;
+    opacity: 0.6;
+}
+
+body {
+    height: 100vh;
+}
