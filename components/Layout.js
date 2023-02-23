@@ -9,9 +9,9 @@ const walletConnector = new NodeWalletConnect(
     },
     {
         clientMeta: {
-            description: "WalletConnect for Goose Blend",
+            description: "WalletConnect for CopyFi",
             url: process.env.URL,
-            name: "Goose Blend",
+            name: "CopyFi Finance",
         },
     }
 );

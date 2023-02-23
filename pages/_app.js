@@ -6,18 +6,18 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Goose Blend - Cross-Chain Bridge</title>
-        <meta property="og:title" content="Goose Blend - Cross-Chain Bridge" key="og_title" />
-        <meta name="twitter:title" content="Goose Blend - Cross-Chain Bridge" key="twitter_title" />
+        <title>CopyFi - Cross-Chain Bridge</title>
+        <meta property="og:title" content="CopyFi - Cross-Chain Bridge" key="og_title" />
+        <meta name="twitter:title" content="CopyFi- Cross-Chain Bridge" key="twitter_title" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Goose Blend" />
+        <meta name="description" content="CopyFi" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gooseblend.dev/" />
-        <meta property="og:description" content="Goose Blend" />
+        <meta property="og:url" content="https://dapp.copyfi.finance/" />
+        <meta property="og:description" content="CopyFi" />
         <meta property="og:image" content="/images/social.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://gooseblend.io/" />
-        <meta property="twitter:description" content="Goose Blend" />
+        <meta property="twitter:url" content="" />
+        <meta property="twitter:description" content="CopyFi" />
         <meta property="twitter:image" content="/images/social.jpg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
