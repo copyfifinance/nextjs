@@ -1188,7 +1188,7 @@ table {
 :root {
     --primary: #5db4ec;
     --primary-light: #5db4e;
-    --highlight: #5db4ec;
+    --highlight: #5db4ec
 }
 
 @font-face {
@@ -1405,7 +1405,7 @@ header.fixed {
 
 .text-center {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 30px
 }
 
 .text-left {
@@ -1728,7 +1728,7 @@ h2 {
     clear: both;
     position: absolute;
     float: left;
-    background: linear-gradient(180deg,#f7cddd 0,rgba(247,205,221,0) .01%,rgba(249,89,151,.65) .2%,transparent);
+    background: linear-gradient(180deg,#f7cddd,rgba(247,205,221,0) .01%,rgba(249,89,151,.65) .2%,transparent);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7cddd",endColorstr="#00000000",GradientType=0)
 }
 
@@ -1747,7 +1747,7 @@ h2 {
     clear: both;
     position: absolute;
     float: left;
-    background: linear-gradient(180deg,#f7cddd 0,rgba(247,205,221,0) .01%,rgba(249,89,151,.65) .2%,transparent);
+    background: linear-gradient(180deg,#f7cddd,rgba(247,205,221,0) .01%,rgba(249,89,151,.65) .2%,transparent);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7cddd",endColorstr="#00000000",GradientType=0);
     transform: rotate(-45deg)
 }
@@ -2229,7 +2229,7 @@ a.button {
 }
 
 .spotlight.num1:after,.spotlight.num2:after,.spotlight.num3:after {
-    background: linear-gradient(180deg,rgba(247,205,221,0) 0,#f7cddd .01%,rgba(249,89,151,0) .1%,transparent);
+    background: linear-gradient(180deg,rgba(247,205,221,0),#f7cddd .01%,rgba(249,89,151,0) .1%,transparent);
     position: absolute;
     top: 0;
     left: 0;
@@ -2256,11 +2256,11 @@ iframe {
 }
 
 .Dapp_dapp_box__QVPeC {
-    background: transparent!important;
+    background: transparent!important
 }
 
 .Dapp_dapp_box__QVPeC .Dapp_dapp__label__1tLmm {
-    color: white!important;
+    color: #fff!important;
     margin-bottom: 5px!important;
     padding: 0!important;
     width: 100%!important;
@@ -2269,24 +2269,24 @@ iframe {
 
 .Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI label {
     font-size: 11px!important;
-    color: white!important;
+    color: #fff!important;
     font-weight: 600!important;
     padding: 2px!important
 }
 
 .Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI {
-    background: transparent!important;
+    background: transparent!important
 }
 
 .col-xs-12 {
-    padding-top: 0!important;
+    padding-top: 0!important
 }
 
 .Dapp_dapp_box__QVPeC input[type=number],.Dapp_dapp_box__QVPeC input[type=text],.Dapp_dapp_box__QVPeC textarea {
     background: transparent!important;
     border-radius: 0!important;
     border: 0!important;
-    border-bottom: 1px solid #ffffff!important;
+    border-bottom: 1px solid #fff!important
 }
 
 .CustomSelect_select_box__selected__oeXul {
@@ -2299,7 +2299,7 @@ iframe {
 }
 
 button.Dapp_dapp__advanced__JZjV5.button.button__transparent {
-    color: white!important;
+    color: #fff!important;
     font-size: 0!important;
     padding-bottom: 50px!important
 }
@@ -2324,14 +2324,14 @@ button.Dapp_dapp__advanced__JZjV5.button.button__transparent svg {
 }
 
 body,body:before {
-    background-color: #0f1932 !important;
+    background-color: #0f1932!important;
     background-image: url(https://copyfi.finance/assets/images/shape-i.png);
-    background-size: contain;
+    background-size: contain
 }
 
 .transaction__details {
-    color: white;
-    line-height: 20px;
+    color: #fff;
+    line-height: 20px
 }
 
 .Dapp_dapp_box__QVPeC {
@@ -2461,7 +2461,6 @@ button.Header_header__wallet__QmJI3 {
 }
 
 button.button.button__large {
-    /* transform:scale(1.17)!important; */
     border-radius: 0!important
 }
 
@@ -2479,10 +2478,11 @@ button.button.button__large {
 
 main {
     margin-right: 0!important;
-    box-shadow: inset 0 0 0.5em 0 #3db5f1, 0 0 0.5em 0 #3db5f1;
+    box-shadow: inset 0 0 .5em 0 #3db5f1,0 0 .5em 0 #3db5f1;
     border: 1px solid rgba(255,255,255,.5)!important;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    border-radius: 5px;
+    border-radius: 5px
 }
 
 .Header_header__network__S0fDc {
@@ -2516,7 +2516,7 @@ button.Header_header__wallet__QmJI3 {
 
 .Dapp_dapp_box__QVPeC .Dapp_dapp__label__1tLmm {
     font-size: .75rem!important;
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .Confirmation_dapp_confirmation__MyVb0>div {
@@ -2601,17 +2601,22 @@ a.button.button__light {
 }
 
 .goose-egg svg {
-    transform: scale(2.7) rotate(-45deg)!important;
-    transform-origin: center!important
+    /* transform:scale(2.7) rotate(-45deg)!important; */
+    /* transform-origin:center!important; */
+    opacity: 0;
 }
 
 .goose-egg {
     overflow: hidden;
     width: 100px;
-    height: 140px;
-    border-radius: 50% 50% 45% 45%;
-    background: rgba(255,255,255,.9);
-    margin-bottom: 10px
+    height: 100px;
+    /* border-radius: 50%; */
+    background-size: cover!important;
+    background: url(https://copyfi.finance/images/logo-s2-white2x.png)!important;
+    margin-bottom: 10px;
+    background-size: contain!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 .Confirmation_confirmation__val__IIyA3 {
@@ -2647,7 +2652,7 @@ p.text-center.mt-0 br {
 .Dapp_dapp_box__QVPeC {
     padding-left: 40px!important;
     padding-right: 40px!important;
-    padding-top: 25px!important;
+    padding-top: 25px!important
 }
 
 .Dapp_dapp_box__QVPeC .Dapp_dapp__advanced__JZjV5 svg {
@@ -2835,7 +2840,6 @@ main:before {
 main:after {
     width: 70px;
     height: 70px;
-    /* box-shadow: inset 0 0 0.5em 0 #3db5f1, 0 0 0.5em 0 #3db5f1!important; */
     background: url(http://copyfi.finance/assets/images/CopyfiLogo.png);
     background-size: contain;
     top: -100px;
@@ -2864,7 +2868,7 @@ body:after {
 }
 
 body {
-    height: 100vh;
+    height: 100vh
 }
 
 button.button.button__large:after,button.button.button__large:before {
