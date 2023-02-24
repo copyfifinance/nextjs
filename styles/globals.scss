@@ -1289,7 +1289,7 @@ header.fixed {
 }
 
 .button,.swal-button {
-    background: var(--primary);
+    background: #4085b2;
     color: #fff;
     border-radius: 5px;
     padding: 10px 14px;
@@ -1307,10 +1307,14 @@ header.fixed {
 }
 
 .button small,.swal-button small {
-    display: block;
+    display: block!important;
     font-size: .7rem;
     font-weight: 400;
-    opacity: .7
+    opacity: .7;
+    clear: both;
+    width: 100%;
+    position: relative;
+    float: left;
 }
 
 .button:hover,.swal-button:hover {
@@ -1324,14 +1328,14 @@ header.fixed {
 }
 
 .swal-button,.swal-button:focus {
-    border: 1px solid #cf3e76!important;
+    border: 1px solid #437fa6!important;
     min-width: 80px;
     outline: none!important;
     box-shadow: none
 }
 
 .swal-button:hover {
-    box-shadow: 0 0 5px 5px #df3b7a4f;
+    box-shadow: 0 0 5px 5px rgb(223 59 122 / 0%);
     background: #f76b1c!important
 }
 
@@ -1374,7 +1378,7 @@ header.fixed {
 
 .button__light:hover {
     box-shadow: 0 0 5px 5px rgba(16,16,16,.407);
-    background: #fff
+    background: transparent;
 }
 
 .button__transparent {
@@ -1840,6 +1844,7 @@ span.blockblend {
     width: 100%;
     display: block
 }
+.Confirmation_dapp_confirmation__MyVb0 p {font-size:14px!important;line-height: 18px!important;padding-bottom: 0px;}
 
 p {
     font-size: 18px;
@@ -2286,6 +2291,7 @@ iframe {
     background: transparent!important;
     border-radius: 0!important;
     border: 0!important;
+    color: white!important;
     border-bottom: 1px solid #fff!important
 }
 
@@ -2358,14 +2364,16 @@ div {
 .CustomSelect_select_box__ns3S3 label {
     font-size: 12px!important;
     font-weight: 600!important;
-    color: #4b3d47!important;
+    color: white!important;
     padding-bottom: 0!important
 }
 
 .Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI input:checked+label {
     color: #fff!important;
-    color: #f95997!important;
-    font-weight: 900!important
+    color: white!important;
+    font-weight: 900!important;
+    background: transparent!important;
+    border-bottom: 1px solid white;
 }
 
 .col-xs-12.col-sm-6 {
@@ -2499,7 +2507,7 @@ button.Header_header__wallet__QmJI3 {
 }
 
 .swal-modal {
-    background: #f95997
+    background: #5db4ec;
 }
 
 .swal-icon--warning {
@@ -2511,7 +2519,7 @@ button.Header_header__wallet__QmJI3 {
 }
 
 .swal-button:hover {
-    background: #d14078!important
+    background: #2a4f67!important;
 }
 
 .Dapp_dapp_box__QVPeC .Dapp_dapp__label__1tLmm {
@@ -2520,13 +2528,13 @@ button.Header_header__wallet__QmJI3 {
 }
 
 .Confirmation_dapp_confirmation__MyVb0>div {
-    background: #f95997!important;
+    background: #0f1932!important;
     border-radius: 0!important;
     box-shadow: none!important
 }
 
 .Confirmation_dapp_confirmation__MyVb0 {
-    background: #f95997!important
+    background: #0f1932!important;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 header {
@@ -2534,13 +2542,16 @@ button.Header_header__wallet__QmJI3 {
 }
 
 .button__light {
-    background: #fff!important;
+    background: transparent;
     max-width: 200px!important;
     margin: 0 auto!important;
     display: block!important;
     text-align: center!important;
-    color: #f95997!important;
-    font-weight: 900!important
+    line-height: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900!important;
+    box-shadow: inset 0 0 0.5em 0 #3db5f1, 0 0 0.5em 0 #3db5f1;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 p small {
@@ -2566,7 +2577,8 @@ button.Header_header__wallet__QmJI3 {
 
 .Confirmation_dapp_confirmation__MyVb0 .Confirmation_dapp_confirmation__inner__o_BoS>div {
     padding-bottom: 0!important;
-    padding-top: 1px!important
+    padding-top: 1px!important;
+    background: transparent;
 }
 
 .Confirmation_dapp_confirmation__inner__o_BoS {
@@ -2581,7 +2593,10 @@ body .Confirmation_dapp_confirmation__MyVb0 p small {
 }
 
 .Confirmation_confirmation__recovery__9ikFP {
-    margin-top: 0!important
+    margin-top: 0!important;
+    padding-top: 2px!important;
+    padding-bottom: 0px!important;
+    height: 25px!important;
 }
 
 label.Confirmation_confirmation__label__cpb3j {
@@ -2601,22 +2616,19 @@ a.button.button__light {
 }
 
 .goose-egg svg {
-    /* transform:scale(2.7) rotate(-45deg)!important; */
-    /* transform-origin:center!important; */
-    opacity: 0;
+    opacity: 0
 }
 
 .goose-egg {
     overflow: hidden;
     width: 100px;
     height: 100px;
-    /* border-radius: 50%; */
     background-size: cover!important;
     background: url(https://copyfi.finance/images/logo-s2-white2x.png)!important;
     margin-bottom: 10px;
     background-size: contain!important;
-    background-position: center!important;
-    background-repeat: no-repeat!important;
+    background-position: 50%!important;
+    background-repeat: no-repeat!important
 }
 
 .Confirmation_dapp_confirmation__MyVb0 .Confirmation_confirmation__val__IIyA3 {
@@ -2806,15 +2818,15 @@ button.button.button__large {
     margin-top: 10px;
     box-shadow: inset 0 0 .5em 0 #3db5f1,0 0 .5em 0 #3db5f1;
     border-radius: 5px!important;
-    display: flex;
+    display: block;
     background: rgba(255,255,255,.1)!important;
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
