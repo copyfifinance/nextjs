@@ -2526,15 +2526,26 @@ button.Header_header__wallet__QmJI3 {
     font-size: .75rem!important;
     margin-top: 20px
 }
-
-.Confirmation_dapp_confirmation__MyVb0>div {
+.Confirmation_confirmation__val__IIyA3::before {
+    content: "";
     background: #0f1932!important;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.Confirmation_dapp_confirmation__MyVb0>div {
+    background: transparent!important;
     border-radius: 0!important;
     box-shadow: none!important
 }
 
 .Confirmation_dapp_confirmation__MyVb0 {
-    background: #0f1932!important;
+    background: transparent!important;
+    -webkit-backdrop-filter: blur(100px); backdrop-filter: blur(100px);
 }
 
 .Confirmation_dapp_confirmation__MyVb0 header {
@@ -2574,6 +2585,7 @@ button.Header_header__wallet__QmJI3 {
 .Confirmation_dapp_confirmation__inner__o_BoS header {
     font-size: 0px!important;
     height: 0;
+    padding: 0!important;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 .Confirmation_dapp_confirmation__inner__o_BoS>div {
