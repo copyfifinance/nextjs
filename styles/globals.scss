@@ -2848,17 +2848,33 @@ button.button.button__large {
     transition: .5s
 }
 
+
+@-webkit-keyframes spacebg {
+    1% {
+        background-position: 1px;
+    }
+
+    100% {
+    background-position: 1000px;
+
+
+    }
+}
+
 main:before {
-     content: "";
+content: "";
     position: absolute;
     top: 5px;
     right: 5px;
-    background: rgb(255 255 255 / 5%);
-    z-index: 1;
+    background: url(https://dapp.copyfi.finance/images/blenderbg.jpg);
+    z-index: 0;
     bottom: 5px;
     left: 5px;
+    background-size: cover;
     border-radius: 5px;
     pointer-events: none;
+    z-index: -1;
+     animation: spacebg 300s linear 1;
 }
 
 main:after {
