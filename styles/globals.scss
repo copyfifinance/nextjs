@@ -2572,7 +2572,8 @@ button.Header_header__wallet__QmJI3 {
 }
 
 .Confirmation_dapp_confirmation__inner__o_BoS header {
-    display: none!important
+    font-size: 0px!important;
+    height: 0;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 .Confirmation_dapp_confirmation__inner__o_BoS>div {
@@ -2783,7 +2784,7 @@ body,div#__next {
 
 .sel-time .CustomSelect_select_box__selected__oeXul svg {
     margin-left: 5px!important;
-    color: #f95997!important
+    color: #ffffff!important
 }
 
 ::-moz-placeholder {
@@ -2967,4 +2968,68 @@ button.button.button__large:after {
     transform: translateY(120%) rotateX(95deg) scaleY(.35);
     background: #3db5f1;
     pointer-events: none
+}
+
+
+.Header_header__wallet__QmJI3 {
+    background: transparent!important;
+}
+
+.CustomSelect_select_box__items__0ajXl {
+    background: #0f1932!important;
+}
+
+.CustomSelect_select_box__ns3S3.CustomSelect_visible__jL59l .CustomSelect_select_box__options__8gs48 {
+    background: #0f1932!important;
+    padding-bottom: 0px!important;
+    /* margin-bottom: 10px!important; */
+    border-bottom: 5px solid #56abba!important;
+    z-index: 99999999!important;
+}
+
+.CustomSelect_select_box__ns3S3.CustomSelect_visible__jL59l .CustomSelect_select_box__options__8gs48::before {
+    content: "";
+    background: #ffffff2b!important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    position: fixed;
+    z-index: -1;
+}
+
+.CustomSelect_select_box__ns3S3.CustomSelect_visible__jL59l .CustomSelect_select_box__options__8gs48 > .CustomSelect_select_box__items__0ajXl:last-child {
+}
+
+.Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI label:hover {
+    border: 0;
+}
+
+.Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI label {
+    border: 0!important;
+}
+
+.Dapp_dapp_box__QVPeC .Dapp_amount__XqkEI input:checked+label {
+    color: #5db4ec!important;
+}
+
+.Dapp_dapp_box__QVPeC .Dapp_dapp__label__1tLmm {
+    margin-bottom: 0px!important;
+}
+
+.CustomSelect_select_box__selected__oeXul {
+    color: white!important;
+}
+
+button.Confirmation_closeModal__m9Ssy {
+    position: fixed;
+    top: 0px;
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.Confirmation_closeModal__m9Ssy svg {
+    width: 25px!important;
+    height: 25px!important;
 }
