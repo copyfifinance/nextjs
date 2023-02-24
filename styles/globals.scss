@@ -2855,7 +2855,7 @@ button.button.button__large {
     }
 
     100% {
-    background-position: 1000px;
+    background-position: -1000px;
 
 
     }
@@ -2874,6 +2874,7 @@ content: "";
     border-radius: 5px;
     pointer-events: none;
     z-index: -1;
+        opacity: 0.5;
      animation: spacebg 180s linear 1;
 }
 
