@@ -36,7 +36,7 @@ const TransactionExtra = ({
     },[delayOptions])
 
     return (
-        <Row><div class="nopadnow">
+        <Row>
             <Col xs="6" sm="6">
                 <label className={styles.dapp__label} htmlFor="rec_network">
                      <Question ans="Wait time before sending starts" />
@@ -46,7 +46,7 @@ const TransactionExtra = ({
                     options={delayOptions}
                     onSelect={onSelectDelay}
                     selected={false}
-                />
+                /></div>
             </Col>
             {/* <Col xs="6" sm="4">
                 <label className={styles.dapp__label} htmlFor="ref_code">
@@ -73,7 +73,7 @@ const TransactionExtra = ({
                         setTransactionSecret(event.currentTarget.value)
                     }
                 />
-            </Col></div>
+            </Col>
         </Row>
     );
 };
