@@ -2573,6 +2573,9 @@ a.button.button__light {
     border-radius: 0!important;
     box-shadow: none!important;
     background: transparent!important;
+    left:0!important;
+    top:0!important;
+    transform: none!important;
 }
 
 .Confirmation_dapp_confirmation__MyVb0 {
@@ -3090,4 +3093,36 @@ button.Confirmation_closeModal__m9Ssy {
 .Confirmation_closeModal__m9Ssy svg {
     width: 25px!important;
     height: 25px!important;
+}
+
+.Confirmation_dapp_confirmation__inner__o_BoS button.button.button__large {
+
+    margin: 0 auto;
+    padding: 0!important;
+    max-height: 50px;
+}
+
+.Confirmation_dapp_confirmation__inner__o_BoS .col-xs-12.col-sm-8.pt-0 {
+    width: 50%!important;
+    display: inline-block;
+    float: left;
+    flex-basis: unset;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.Confirmation_dapp_confirmation__inner__o_BoS .col-xs-12.col-sm-4.pt-0 {
+    flex-basis: unset;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.Confirmation_dapp_confirmation__inner__o_BoS .col-xs-12.col-sm-4.pt-0 a.button.button__light {
+    line-height: 36px;
+    min-height: 50px;
+}
+
+.Confirmation_dapp_confirmation__inner__o_BoS button.button.button__large.Confirmation_disabled__49TEf small {
+    font-size: 10px;
 }
