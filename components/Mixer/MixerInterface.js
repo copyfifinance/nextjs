@@ -45,12 +45,12 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
     ]);
 
     const [delayOptions, setDelayOptions] = useState([
-        { title: "10 minutes", value: 10 },
-        { title: "30 minutes", value: 30 },
-        { title: "1 hour", value: 60 },
-        { title: "6 hours", value: 360 },
-        { title: "12 hours", value: 720 },
-        { title: "24 hours", value: 1440 },
+        { title: "Delay 10 min", value: 10 },
+        { title: "Delay 30 min", value: 30 },
+        { title: "Delay 1 hour", value: 60 },
+        { title: "Delay 6 hours", value: 360 },
+        { title: "Delay 12 hours", value: 720 },
+        { title: "Delay 24 hours", value: 1440 },
     ]);
 
     const [expectedDelivery, setExpnectedDelivery] = useState(

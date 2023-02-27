@@ -36,10 +36,9 @@ const TransactionExtra = ({
     },[delayOptions])
 
     return (
-        <Row>
+        <Row><div class="nopadnow">
             <Col xs="6" sm="6">
                 <label className={styles.dapp__label} htmlFor="rec_network">
-                   Delay
                      <Question ans="Wait time before sending starts" />
                 </label>
                <div class="sel-time"> <CustomSelect
@@ -47,7 +46,7 @@ const TransactionExtra = ({
                     options={delayOptions}
                     onSelect={onSelectDelay}
                     selected={false}
-                /></div>
+                />
             </Col>
             {/* <Col xs="6" sm="4">
                 <label className={styles.dapp__label} htmlFor="ref_code">
@@ -64,17 +63,17 @@ const TransactionExtra = ({
             </Col> */}
             <Col xs="12" sm="6">
                 <label className={styles.dapp__label} htmlFor="user_secret">
-                    User secret
                     <Question ans="Optional unique code for repeat users" />
                 </label>
                 <input
                     type="text"
+                    placeholder="User secret"
                     name="user_secret"
                     onChange={(event) =>
                         setTransactionSecret(event.currentTarget.value)
                     }
                 />
-            </Col>
+            </Col></div>
         </Row>
     );
 };
