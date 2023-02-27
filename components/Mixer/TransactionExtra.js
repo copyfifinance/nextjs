@@ -38,9 +38,6 @@ const TransactionExtra = ({
     return (
         <Row>
             <Col xs="6" sm="6">
-                <label className={styles.dapp__label} htmlFor="rec_network">
-                     <Question ans="Wait time before sending starts" />
-                </label>
                <div class="sel-time"> <CustomSelect
                     customGroup="delay"
                     options={delayOptions}
@@ -62,9 +59,6 @@ const TransactionExtra = ({
                 />
             </Col> */}
             <Col xs="12" sm="6">
-                <label className={styles.dapp__label} htmlFor="user_secret">
-                    <Question ans="Optional unique code for repeat users" />
-                </label>
                 <input
                     type="text"
                     placeholder="User secret"
