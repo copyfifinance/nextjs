@@ -2546,7 +2546,11 @@ p.text-center.mt-0 small {
     min-height: unset!important;
     line-height: 12px;
 }
-
+.Confirmation_dapp_confirmation__MyVb0 .Confirmation_confirmation__label__cpb3j {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 3px;
+}
 a.button.button__light {
     margin-bottom: 10px!important;
 }
@@ -2729,10 +2733,10 @@ body,div#__next {
 }
 
 .col-xs-12.col-sm-12 label.Dapp_dapp__label__1tLmm:before {
-    content: "⟿";
+       content: "•";
     position: absolute;
-    margin-top: -85px;
-    font-size: 40px;
+    margin-top: -50px;
+    font-size: 32px;
     color: #5db4ec;
     left: 20%;
     -webkit-animation-name: blend;
@@ -2743,7 +2747,7 @@ body,div#__next {
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
-    pointer-events: none!important
+    pointer-events: none!important;
 }
 
 @-webkit-keyframes blend {
@@ -2753,27 +2757,27 @@ body,div#__next {
     }
 
     12% {
-        left: 38%;
+        left: 39%;
         opacity: 1
     }
 
     24% {
-        left: 46%;
+        left: 48%;
         opacity: 1
     }
 
     36% {
-        left: 54%;
+        left: 57%;
         opacity: 1
     }
 
     48% {
-        left: 62%;
+        left: 66%;
         opacity: 0
     }
 
     to {
-        left: 62%;
+        left: 66%;
         opacity: 0
     }
 }
@@ -2785,31 +2789,33 @@ body,div#__next {
     }
 
     12% {
-        left: 38%;
+        left: 39%;
         opacity: 1
     }
 
     24% {
-        left: 46%;
+        left: 48%;
         opacity: 1
     }
 
     36% {
-        left: 54%;
+        left: 57%;
         opacity: 1
     }
 
     48% {
-        left: 62%;
+        left: 66%;
         opacity: 0
     }
 
     to {
-        left: 62%;
+        left: 66%;
         opacity: 0
     }
 }
-
+.Dapp_dapp_box__QVPeC button.button.button__large {
+    font-size: 16px;
+}
 .button__light:hover {
     box-shadow: none!important
 }
@@ -2937,9 +2943,6 @@ body:after {
     opacity: .6
 }
 
-body {
-    height: 100vh
-}
 
 button.button.button__large:after,button.button.button__large:before {
     content: "";
@@ -3013,21 +3016,9 @@ button.button.button__large:after {
     }
 }
 
-.col-xs-12.text-center:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: .7;
-    filter: blur(1em);
-    transform: translateY(120%) rotateX(95deg) scaleY(.35);
-    background: #3db5f1;
-    pointer-events: none
+main {
+    min-height: 450px;
 }
-
-
 .Header_header__wallet__QmJI3 {
     background: transparent!important;
 }

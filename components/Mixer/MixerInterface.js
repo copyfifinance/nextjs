@@ -491,7 +491,7 @@ const Content = ({
             </button>
             <Row>
                 <Col xs="12">
-                    <button className="button button__large">Blend it</button>
+                    <button className="button button__large">Bridge</button>
                 </Col>
               
             </Row>
