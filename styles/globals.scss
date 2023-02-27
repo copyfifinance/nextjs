@@ -1328,10 +1328,29 @@ header.fixed {
 }
 
 .swal-button,.swal-button:focus {
-    border: 1px solid #437fa6!important;
-    min-width: 80px;
-    outline: none!important;
-    box-shadow: none
+      margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,.5)!important;
+    position: relative;
+    z-index: 1!important;
+    margin-top: 5px;
+    box-shadow: inset 0 0 0.5em 0 #3db5f1, 0 0 0.5em 0 #3db5f1;
+    border-radius: 5px!important;
+    display: block;
+    background: rgba(255,255,255,.1)!important;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    transition: .5s;
 }
 
 .swal-button:hover {
@@ -1581,7 +1600,7 @@ h2 {
 }
 
 .swal-modal {
-    background-color: #0f0f11;
+    background-color: #0f1932!important;
     border: 0;
     border-radius: 5px;
     color: #fff;
@@ -2659,9 +2678,15 @@ body .Confirmation_dapp_confirmation__MyVb0 p small {
     margin-top: 0!important;
     padding-top: 2px!important;
     padding-bottom: 0px!important;
-    height: 25px!important;
+    height: 60px!important;
+}
+label.Confirmation_confirmation__label__cpb3j {
+    color: #ec5d5d!important;
 }
 
+.Confirmation_confirmation__recovery__9ikFP {
+    border-color: #ec5d5d!important;
+}
 label.Confirmation_confirmation__label__cpb3j {
     font-weight: 900!important
 }
