@@ -49,7 +49,7 @@ export default async function handler(req, res) {
         }
 
         if (k == "delay") {
-            if (![10, 30, 60, 360, 720, 1440].includes(parseInt(inputs[k]))) {
+            if (![10, 30, 60, 120, 360, 720, 1440].includes(parseInt(inputs[k]))) {
                 wrong = true;
             }
         }
