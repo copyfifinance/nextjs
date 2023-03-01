@@ -54,6 +54,7 @@ const MixerInterface = ({
         { title: "10 minutes", value: 10 },
         { title: "30 minutes", value: 30 },
         { title: "1 hour", value: 60 },
+        { title: "2 hours", value: 120 },
         { title: "6 hours", value: 360 },
         { title: "12 hours", value: 720 },
         { title: "24 hours", value: 1440 },
@@ -62,7 +63,7 @@ const MixerInterface = ({
 
     useEffect(() => {
         if (recipientNetwork == "btc" || callerNetwork == "btc") {
-            setDelayOptions([{ title: "2 hour", value: 120 }]);
+            setDelayOptions([{ title: "2 hours", value: 120 }]);
             setTransactionDelay(120);
         } else {
             setDelayOptions(defaultDelayOptions);
