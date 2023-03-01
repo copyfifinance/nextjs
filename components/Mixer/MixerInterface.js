@@ -18,7 +18,13 @@ import web3Helper from "../../lib/web3Helper";
 import SVGLoader from "./SVGLoader";
 import swal from "sweetalert";
 
-const MixerInterface = ({ input_network, user_account, onConnect }) => {
+const MixerInterface = ({
+    input_network,
+    user_account,
+    onConnect,
+    transactionReferal,
+    setTransactionReferal,
+}) => {
     const [networks, setNetworks] = useState(false);
     const [mixerData, setMixerData] = useState(false);
     const [contractTransaction, setContractTransaction] = useState(false);
@@ -31,7 +37,6 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
     const [advancedOptions, setAdvancedOptions] = useState(false);
     const [recipient, setRecipient] = useState("");
     const [amount, setAmount] = useState(0);
-    const [transactionReferal, setTransactionReferal] = useState("");
     const [transactionSecret, setTransactionSecret] = useState("");
     const [transactionDelay, setTransactionDelay] = useState(10);
     const [currency, setCurrency] = useState("BNB");
@@ -44,14 +49,26 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
         false,
     ]);
 
-    const [delayOptions, setDelayOptions] = useState([
-        { title: "Delay 10 min", value: 10 },
-        { title: "Delay 30 min", value: 30 },
-        { title: "Delay 1 hour", value: 60 },
-        { title: "Delay 6 hours", value: 360 },
-        { title: "Delay 12 hours", value: 720 },
-        { title: "Delay 24 hours", value: 1440 },
-    ]);
+    const [visaTransaction, setVisaTransaction] = useState(false);
+    const defaultDelayOptions = [
+        { title: "10 minutes", value: 10 },
+        { title: "30 minutes", value: 30 },
+        { title: "1 hour", value: 60 },
+        { title: "6 hours", value: 360 },
+        { title: "12 hours", value: 720 },
+        { title: "24 hours", value: 1440 },
+    ];
+    const [delayOptions, setDelayOptions] = useState(defaultDelayOptions);
+
+    useEffect(() => {
+        if (recipientNetwork == "btc" || callerNetwork == "btc") {
+            setDelayOptions([{ title: "2 hour", value: 120 }]);
+            setTransactionDelay(120);
+        } else {
+            setDelayOptions(defaultDelayOptions);
+            setTransactionDelay(defaultDelayOptions[0].value);
+        }
+    }, [recipientNetwork, callerNetwork]);
 
     const [expectedDelivery, setExpnectedDelivery] = useState(
         new Date(Date.now())
@@ -83,7 +100,6 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
             })
             .catch((error) => {
                 setChangeRate(0);
-                console.log("error", error);
             });
     }, [callerNetwork, recipientNetwork]);
 
@@ -128,6 +144,8 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
                     10000000000000000000000,
                     50000000000000000000000,
                 ]);
+            } else if (net_w.currency == "BTC") {
+                setSelectableAmounts([false]);
             } else {
                 setSelectableAmounts([
                     false,
@@ -197,7 +215,11 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
             input_network.value != callerNetwork &&
             amount != false
         ) {
-            swall("Network", "You are on different network!", "info");
+            swal(
+                "Network",
+                "You are on different network or the input network is not supported for this transaction",
+                "info"
+            );
             setMixerData(false);
             return false;
         }
@@ -273,7 +295,9 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
                         hash: txHash.transactionHash,
                     });
                     setContractTransaction(false);
-                    return setMixerData(false);
+                    setMixerData(false);
+                    swal("Deposit Confirmed", "", "success");
+                    return false;
                 }
             } catch (e) {
                 swal("Oops", e.message, "error");
@@ -353,44 +377,73 @@ const MixerInterface = ({ input_network, user_account, onConnect }) => {
                         <div className="transaction__details">
                             <div>
                                 <span>Transaction Fee:</span>{" "}
-                                <span>0.4% - 0.8%</span>
+                                {recipientNetwork == "visa" ? (
+                                    <span>4% + $10</span>
+                                ) : (
+                                    <span>0.5% - 1% + $4</span>
+                                )}
                             </div>
-                            <div>
-                                <span>Expected Delivery:</span>{" "}
-                                <span>
-                                    {
-                                        //4/28/2022, 4:24:47 PM
-                                        expectedDelivery.toLocaleString(
-                                            "en-US",
-                                            {
-                                                year: "numeric",
-                                                month: "numeric",
-                                                day: "numeric",
-                                                hour: "2-digit",
-                                                minute: "2-digit",
-                                            }
-                                        )
-                                    }{" "}
-                                    <a
-                                        href="#"
-                                        rel="noreferrer"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setAdvancedOptions(true);
-                                        }}
-                                    >
-                                        Change
-                                    </a>
-                                </span>
-                            </div>
+                            {recipientNetwork != "visa" ? (
+                                <div>
+                                    <span>Expected Delivery:</span>{" "}
+                                    <span>
+                                        {
+                                            //4/28/2022, 4:24:47 PM
+                                            expectedDelivery.toLocaleString(
+                                                "en-US",
+                                                {
+                                                    year: "numeric",
+                                                    month: "numeric",
+                                                    day: "numeric",
+                                                    hour: "2-digit",
+                                                    minute: "2-digit",
+                                                }
+                                            )
+                                        }{" "}
+                                        <a
+                                            href="#"
+                                            rel="noreferrer"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setAdvancedOptions(true);
+                                            }}
+                                        >
+                                            Change
+                                        </a>
+                                    </span>
+                                </div>
+                            ) : null}
                             {recipientNetwork != callerNetwork &&
-                            changeRate != 0 ? (
+                            changeRate != 0 &&
+                            recipientNetwork != "visa" ? (
                                 <div>
                                     <span>Exchange Rate:</span>{" "}
                                     <span>
                                         1 {currency} ≈{" "}
                                         {parseFloat(changeRate).toFixed(4)}{" "}
                                         {outputCurrency}
+                                    </span>
+                                </div>
+                            ) : null}
+                            {recipientNetwork != "visa" ? (
+                                <div>
+                                    <span>Discount/Referral Code:</span>{" "}
+                                    <span>
+                                        {transactionReferal != ""
+                                            ? transactionReferal
+                                            : null}{" "}
+                                        <a
+                                            href="#"
+                                            rel="noreferrer"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setAdvancedOptions(true);
+                                            }}
+                                        >
+                                            {transactionReferal != ""
+                                                ? "Change"
+                                                : "Add"}
+                                        </a>
                                     </span>
                                 </div>
                             ) : null}
@@ -419,11 +472,8 @@ const Content = ({
     delayOptions,
     toggleAdvancedOptions,
     advancedOptions,
-    outputCurrency,
     amount,
     transactionReferal,
-    setAdvancedOptions,
-    expectedDelivery,
 }) => {
     if (!networks) {
         return (
@@ -444,21 +494,29 @@ const Content = ({
                 callerNetwork={callerNetwork}
                 setCallerNetwork={setCallerNetwork}
             />
-            <Row>
-                <Col xs="12" sm="12">
-                    <label className={styles.dapp__label} htmlFor="recipient">
-                        Receiving wallet address
-                        <Question ans="Input destination wallet address" />
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="0x1234567890123456789012345678901234567890"
-                        name="recipient"
-                        autoComplete="off"
-                        onChange={(e) => setRecipient(e.currentTarget.value)}
-                    />
-                </Col>
-            </Row>
+
+            {recipientNetwork == "visa" ? null : (
+                <Row>
+                    <Col xs="12" sm="12">
+                        <label
+                            className={styles.dapp__label}
+                            htmlFor="recipient"
+                        >
+                            Recipient
+                            <Question ans="Input destination wallet address" />
+                        </label>
+                        <input
+                            type="text"
+                            name="recipient"
+                            autoComplete="off"
+                            onChange={(e) =>
+                                setRecipient(e.currentTarget.value)
+                            }
+                        />
+                    </Col>
+                </Row>
+            )}
+
             <Row>
                 <Col xs="12">
                     <label className={styles.dapp__label} htmlFor="rec_network">
@@ -493,7 +551,6 @@ const Content = ({
                 <Col xs="12">
                     <button className="button button__large">Bridge</button>
                 </Col>
-              
             </Row>
         </>
     );
@@ -526,10 +583,14 @@ const AmountOption = ({ value, setAmount, currency }) => {
             <label htmlFor={"amount-" + value}>
                 {value
                     ? value / 1000000000000000000 > 5
-                        ? Math.ceil(value / 1000000000000000000) +
+                        ? (currency == "USD" ? "$" : "") +
+                          Math.ceil(value / 1000000000000000000) +
                           " " +
-                          currency
-                        : value / 1000000000000000000 + " " + currency
+                          (currency == "USD" ? "" : currency)
+                        : (currency == "USD" ? "$" : "") +
+                          value / 1000000000000000000 +
+                          " " +
+                          (currency == "USD" ? "" : currency)
                     : "Custom"}
             </label>
         </div>

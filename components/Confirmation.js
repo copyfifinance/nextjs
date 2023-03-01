@@ -329,7 +329,7 @@ const Confirmation = ({
                         )}
                     </Col>
                     <Col xs="12" sm="4" customClass="pt-0">
-                        <a href={"https://blockblend.io/status/" + transactionData.transactionRecipient + "/" + transactionData.tracking} style={{height: "100%", width: "100%"}} target="_blank" className="button button__light">Status</a>
+                        <a href={"/status/" + transactionData.transactionRecipient + "/" + transactionData.tracking} style={{height: "100%", width: "100%"}} target="_blank" className="button button__light">Status</a>
                     </Col>
                     <p className="text-center mt-0">
                         <small>

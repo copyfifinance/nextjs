@@ -11,7 +11,18 @@ const NetworkSelector = ({
     onSelect,
     callerNetwork,
     setCallerNetwork,
+    isVisa,
 }) => {
+    if (typeof isVisa == "undefined") {
+        isVisa = false;
+    }
+    let input_networks = [];
+
+    for (let i = 0; i < networks.length; i++) {
+        if (networks[i].value != "visa")
+            input_networks[input_networks.length] = networks[i];
+    }
+
     return (
         <>
             <Row>
@@ -25,33 +36,36 @@ const NetworkSelector = ({
                     <CustomSelect
                         key={2}
                         customGroup="bnetwork"
-                        options={networks}
+                        options={input_networks}
                         onSelect={setCallerNetwork}
                         selected={callerNetwork ? callerNetwork : false}
                     />
                 </Col>
 
-                <Col xs="12" sm="6">
-                    <label className={styles.dapp__label} htmlFor="rec_network">
-                        To
-                        <Question
-                            ans="Select receiving blockchain"
+                {!isVisa ? (
+                    <Col xs="12" sm="6">
+                        <label
+                            className={styles.dapp__label}
+                            htmlFor="rec_network"
+                        >
+                            To
+                            <Question ans="Select receiving blockchain" />
+                        </label>
+                        <CustomSelect
+                            key={1}
+                            customGroup="network"
+                            options={networks}
+                            onSelect={onSelect}
+                            selected={
+                                selected
+                                    ? selected
+                                    : callerNetwork
+                                    ? callerNetwork
+                                    : false
+                            }
                         />
-                    </label>
-                    <CustomSelect
-                        key={1}
-                        customGroup="network"
-                        options={networks}
-                        onSelect={onSelect}
-                        selected={
-                            selected
-                                ? selected
-                                : callerNetwork
-                                ? callerNetwork
-                                : false
-                        }
-                    />
-                </Col>
+                    </Col>
+                ) : null}
             </Row>
         </>
     );
