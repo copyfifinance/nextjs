@@ -51,13 +51,12 @@ const MixerInterface = ({
 
     const [visaTransaction, setVisaTransaction] = useState(false);
     const defaultDelayOptions = [
-        { title: "10 minutes", value: 10 },
-        { title: "30 minutes", value: 30 },
-        { title: "1 hour", value: 60 },
-        { title: "2 hours", value: 120 },
-        { title: "6 hours", value: 360 },
-        { title: "12 hours", value: 720 },
-        { title: "24 hours", value: 1440 },
+        { title: "delay 10 min", value: 10 },
+        { title: "delay 30 min", value: 30 },
+        { title: "delay 1 hour", value: 60 },
+        { title: "delay 6 hours", value: 360 },
+        { title: "delay 12 hours", value: 720 },
+        { title: "delay 24 hours", value: 1440 },
     ];
     const [delayOptions, setDelayOptions] = useState(defaultDelayOptions);
 
