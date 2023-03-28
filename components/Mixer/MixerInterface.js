@@ -428,13 +428,14 @@ const MixerInterface = ({
                             ) : null}
                             {recipientNetwork != "visa" ? (
                                 <div>
-                                    <span>Discount/Referral Code:</span>{" "}
+                                    <span class="discount-hide">Discount/Referral Code:</span>{" "}
                                     <span>
                                         {transactionReferal != ""
                                             ? transactionReferal
                                             : null}{" "}
                                         <a
                                             href="#"
+                                            class="discount-hide"
                                             rel="noreferrer"
                                             onClick={(e) => {
                                                 e.preventDefault();
